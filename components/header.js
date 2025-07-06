@@ -48,7 +48,7 @@ headerTemplate.innerHTML = `
 
 .btn {
   display: block;
-  margin-left: auto; /* Empujar el botón hacia la derecha */
+  margin-left: auto; 
 }
 
 .nav-toggle-label {
@@ -101,9 +101,9 @@ headerTemplate.innerHTML = `
 .logo {
     order: 1; 
   }
-  .btn {
+  .btn-header {
     order: 3; 
-    display: none; /* Ocultar en móvil */
+    display: none; 
   }
 
   .nav-toggle-label {
@@ -201,7 +201,7 @@ headerTemplate.innerHTML = `
 </ul>
 </nav>
 
-<button class="btn" type="button"> Contact Us</button>
+<button class="btn btn-header" type="button"> Contact Us</button>
 
 </header>
 `;
