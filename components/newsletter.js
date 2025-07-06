@@ -14,7 +14,14 @@ newsletterTemplate.innerHTML = `
     .newsletter h2, h3{
         background-color:transparent;
     }    
-        
+
+    .form-email{
+    background:transparent;
+    display:flex;
+    flex-direction:column;
+    
+    }
+   
     .input-email {
         background-image: url("./media/newsletter/icon/mail.svg");
         background-repeat: no-repeat;
@@ -23,7 +30,12 @@ newsletterTemplate.innerHTML = `
         width: 100%;
         height: 48px;
         box-sizing: border-box;
+       
         }
+
+    .input-email:hover{
+    border:1px solid black;
+    }
     
     .sr-only {
             position: absolute;
@@ -37,7 +49,24 @@ newsletterTemplate.innerHTML = `
             border-width: 0;
             }
 
- 
+    .btn-news{
+
+    }
+    @media (min-width: 761px){
+    
+    .form-email{
+    flex-direction:row;
+    align-items:baseline;
+    gap:20px;
+    justify-items: space-between;
+    width:60%
+    }
+
+    .input-email{
+     width:200%;
+    }
+    
+    }
 
     </style>
     
@@ -46,7 +75,7 @@ newsletterTemplate.innerHTML = `
     <h3>Let us help you!</h3>
 
     <form class="form-email" action="/subscribe" method="post">
-        <div class="form-email--div">
+        
             <label for="email" class="sr-only">Your mail here</label>
 
             <input
@@ -57,9 +86,9 @@ newsletterTemplate.innerHTML = `
                 placeholder="Enter your email"
                 required
             />
-        </div>
+  
 
-        <button type="submit" class="btn ">Suscribirse</button>
+        <button type="submit" class="btn btn-news" data-href="#contact" >Suscribirse</button>
     </form>
 
     </section>
@@ -69,6 +98,18 @@ class NewsletterComponent extends HTMLElement {
     constructor() {
         super();
         this.innerHTML = newsletterTemplate.innerHTML;
+    }
+
+    connectedCallback() {
+        const button = this.querySelector('.btn-news');
+        const href = button.getAttribute('data-href');
+        
+        if (button && href) {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                window.location.href = href; 
+            });
+        }
     }
 }
 
