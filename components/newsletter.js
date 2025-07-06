@@ -36,6 +36,7 @@ background-color: var(--Secondary-2);
   border-width: 0;
 }
         
+
       </style>
       
   <section class="newsletter">
