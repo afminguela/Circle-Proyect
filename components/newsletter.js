@@ -88,7 +88,7 @@ newsletterTemplate.innerHTML = `
             />
   
 
-        <button type="submit" class="btn btn-news" data-href="#contact" >Suscribirse</button>
+        <button type="submit" class="btn btn-news" data-href="../contact.html" >Suscribirse</button>
     </form>
 
     </section>

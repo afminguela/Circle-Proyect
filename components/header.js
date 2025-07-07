@@ -5,7 +5,7 @@ headerTemplate.innerHTML = `
 .header {
   display: flex;
   width: 100%;
-  padding: 70px 170px 0px 70px;
+
   justify-content: space-between; 
   align-items: baseline; 
   gap: 20px;
@@ -94,7 +94,7 @@ headerTemplate.innerHTML = `
 
 @media (max-width: 760px) {
   .header {
-    padding: 20px 15px 0px 15px; 
+    padding: 0px 15px 0px 15px; 
     position: relative; 
     justify-content: space-between;
   }
@@ -147,7 +147,9 @@ headerTemplate.innerHTML = `
 
 @media (min-width: 761px) {
   .header {
-    padding: 70px 170px 0px 170.645px; 
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 0px;
   }
 
   .nav-toggle-label {
@@ -171,6 +173,8 @@ headerTemplate.innerHTML = `
   .btn {
     display: block;
   }
+    .btn-header2{
+    display:none}
 }
 
 </style>
@@ -189,7 +193,7 @@ headerTemplate.innerHTML = `
 <nav class="nav">
 <ul aria-label="Menu" class="">
 <li>
-<a href="#">Home</a>
+<a href="../index.html">Home</a>
 </li>
 <li>
 <a href="#">Projects</a>
@@ -197,11 +201,11 @@ headerTemplate.innerHTML = `
 <li>
 <a href="#">Services</a>
 </li>
-
+<button class="btn btn-header2" type="button" data-href="../contact.html"> Contact Us</button>
 </ul>
 </nav>
 
-<button class="btn btn-header" type="button"> Contact Us</button>
+<button class="btn btn-header" type="button" data-href="../contact.html"> Contact Us</button>
 
 </header>
 `;
@@ -228,6 +232,16 @@ class HeaderComponent extends HTMLElement {
         checkbox.checked = false;
       });
     });
+
+     const button = this.querySelector('.btn-header');
+        const href = button.getAttribute('data-href');
+        
+        if (button && href) {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                window.location.href = href; 
+            });
+        }
   }
 }
 customElements.define("header-component", HeaderComponent);
