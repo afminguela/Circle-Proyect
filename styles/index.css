@@ -1,4 +1,6 @@
 /* -------HERO--------- MÓVIL - Base */
+/* -------HERO--------- MÓVIL - Base */
+/* -------HERO--------- MÓVIL - Base */
 .hero {
     display: flex;
     flex-direction: column;
@@ -17,7 +19,6 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
-
 }
 
 .hero-headlines--buttons a:hover {
@@ -54,7 +55,9 @@
     background: transparent;
 }
 
-/* TABLET */
+/* --------------------TABLET */
+/* --------------------TABLET */
+/* --------------------TABLET */
 @media (min-width: 380px) and (max-width: 760px) {
     .hero {
         flex-direction: row;
@@ -90,7 +93,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        max-width: 200px;
+        max-width: 100px;
+        max-width: 50%;
         z-index: 2;
     }
 
@@ -99,12 +103,16 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        max-width: 200px;
+        max-width: 100px;
+        max-width: 50%;
         z-index: 2;
     }
 }
 
-/* DESKTOP */
+/* --------------  DESKTOP */
+/* --------------  DESKTOP */
+/* --------------  DESKTOP */
+
 @media (min-width: 761px) {
     .hero {
         flex-direction: row;
@@ -157,6 +165,9 @@
 }
 
 /* LOGOS SECTION ---- MOVIL - Base */
+/* LOGOS SECTION ---- MOVIL - Base */
+/* LOGOS SECTION ---- MOVIL - Base */
+/* LOGOS SECTION ---- MOVIL - Base */
 
 .logos {
     margin: 120px 20px;
@@ -173,14 +184,19 @@
     filter: grayscale(0%);
 }
 
-/* TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
 @media (min-width: 380px) and (max-width: 760px) {
     .logos {
         width: 90%;
     }
 }
 
-/* DESKTOP */
+/* ------------------------DESKTOP */
+/* ------------------------DESKTOP */
+/* ------------------------DESKTOP */
 @media (min-width: 761px) {
     .logos {
         width: 90%;
@@ -188,6 +204,8 @@
     }
 }
 
+/* RECENT PROJECTS. MOVILE - Base */
+/* RECENT PROJECTS. MOVILE - Base */
 /* RECENT PROJECTS. MOVILE - Base */
 
 .recent-projects {
@@ -208,6 +226,8 @@
     flex-wrap: wrap;
 }
 
+/* TESTIMONIALS MÓVIL - Base */
+/* TESTIMONIALS MÓVIL - Base */
 /* TESTIMONIALS MÓVIL - Base */
 .testimonial {
     background-color: var(--Neutral-dark);
@@ -232,14 +252,11 @@
 }
 
 .testimonial-emoji img {
-
     background-color: transparent;
     width: 100%;
     height: 100%;
     object-fit: contain;
-
 }
-
 
 .testimonial>.testimonial-emoji:nth-child(1) {
     top: 10px;
@@ -271,8 +288,6 @@
     background-color: transparent;
     padding: 0;
     margin: 0 0 20px 0;
-
-
 }
 
 .testimonial-text p {
@@ -329,7 +344,10 @@
     line-height: 1.2;
 }
 
-/* TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+
 @media (min-width: 380px) and (max-width: 769px) {
     .testimonial {
         margin: 50px auto;
@@ -341,7 +359,6 @@
         display: block;
     }
 
-
     .testimonial-text h3 {
         font-size: 2.2rem;
     }
@@ -351,11 +368,13 @@
     }
 
     .testimonial-client img {
-        margin-right: -200px; 
+        margin-right: -200px;
     }
 }
 
-/* DESKTOP */
+/* ----------------------------  DESKTOP */
+/* ----------------------------  DESKTOP */
+/* ----------------------------  DESKTOP */
 @media (min-width: 770px) {
     .testimonial {
         margin: 80px auto;
@@ -365,9 +384,7 @@
 
     .testimonial-emoji {
         display: block;
-
     }
-
 
     .testimonial>.testimonial-emoji:nth-child(1) {
         top: 30px;
@@ -402,6 +419,96 @@
         height: 70px;
         margin-right: -320px;
     }
+}
+
+/* SERVICES ----MOVIL - BASE */
+/* SERVICES ----MOVIL - BASE */
+/* SERVICES ----MOVIL - BASE */
+
+.services {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 150px;
+}
+
+.services h2 {
+    margin: 20px;
+    text-align: left;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.services-card {
+    background-color: var(--White);
+    text-align: left;
+    margin: 20px auto;
+    padding: 30px 15px;
+    width: 80%;
+}
+
+.services-card:hover {
+    box-shadow: 22px 16px 12px -8px var(--Neutral-medium);
+}
+
+.services-card--logo {
+    background-color: var(--Primary-hover);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.services-card--logo img {
+    background-color: var(--Primary-hover);
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.services-card h4,
+.services-card p,
+.services-card a {
+    background-color: var(--White);
+    text-align: left;
+    padding: 10px;
+}
+
+.services-card p {
+    margin-bottom: 50px;
+    color: var(--Neutral-medium);
+}
+
+.services-card a {
+    color: var(--Primary-default);
+}
+
+.services-card a:hover {
+    text-decoration: underline;
+}
+
+/* --------------- TABLET */
+/* --------------- TABLET */
+/* --------------- TABLET */
+@media (min-width: 380px) and (max-width: 769px) {
 
 
+}
+
+/* ---------------------DESKTOP */
+/* ---------------------DESKTOP */
+/* ---------------------DESKTOP */
+@media (min-width: 770px) {
+    .services-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+    }
 }
