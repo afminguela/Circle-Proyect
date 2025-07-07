@@ -35,7 +35,7 @@ footerTemplate.innerHTML =`
 }
 
 .footer-Left--logo {
-    text-align: left;
+    text-align: center;
 }
 
 
