@@ -15,19 +15,62 @@ class GlassButton extends HTMLElement {
 
         .glass-button {
             position: fixed;
-            top:800px;
-            right:200px;
+            top:450px;
+            right:10px;
             display: flex;
             gap: 1.2rem;
-            padding: 1rem 1.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 2.5rem;
-            background: #ffffff;
+            background:rgba(255, 255, 255, 0.15);
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(14px);
-            border: 1px solid #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.14);
             transition: all 0.3s ease;
             animation: float 6s ease-in-out infinite;
             cursor: pointer;
+            }
+
+        .glass-button img{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+    
+            }
+
+        @media (min-width:380px) AND (max-width:770px){
+            
+        .glass-button{
+            top:750px;
+            right:20px;
+            padding: 1rem 1.5rem;
+
+            }
+        .glass-button img{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+    
+            }
+            }
+
+        @media (min-width:771px){
+            
+        .glass-button{
+            top:800px;
+            right:100px;
+            padding: 1rem 1.5rem;
+
+            }
+        .glass-button img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+    
+            }
+            
             }
 
         .glass-button span {
@@ -37,13 +80,7 @@ class GlassButton extends HTMLElement {
             opacity: 0.75;
             transition: transform 0.3s ease, opacity 0.3s ease;
             }
-        .glass-button img{
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            object-fit: cover;
-    
-            }
+        .
 
         .glass-button span:hover {
             transform: scale(1.2);
