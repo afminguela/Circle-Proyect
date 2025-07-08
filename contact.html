@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Circle !!</title>
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="./media/logos/favicon (1).png"
-    />
-  </head>
-  <body>
-    <header-component></header-component>
-    
-    <h1>Soy Contactos</h1>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circle !!</title>
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/contact.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="./media/logos/favicon (1).png" />
+</head>
 
-    <newsletter-component></newsletter-component>
-    <footer-component></footer-component>
-    <script src="./components/header.js" type="module"></script>
-    <script src="./components/newsletter.js" type="module"></script>
-    <script src="./components/footer.js" type="module"></script>
-  </body>
+<body>
+  <header-component></header-component>
+
+  <form id="form-container" action="" method="get" class="formClass">
+    <h1>Contact Us</h1>
+
+    <div class="full-name">
+      <label for="fullName">Full Name</label><br />
+      <input type="text" placeholder="Enter your full name" name="name" id="name" onblur="validateName()" required />
+    </div>
+    <div class="email-phone">
+      <div class="email">
+        <label for="email">Email</label><br />
+        <input type="email" placeholder="Enter your Email" name="email" id="email" onblur="validateEmail()" required />
+      </div>
+      <div class="phone">
+        <label for="phone">Phone</label><br />
+        <input type="phone" placeholder="Enter your Phone Number" name="phone" id="phone" onblur="validatePhone()"
+          required />
+      </div>
+    </div>
+
+      <div class="phone">
+        <label for="phone">Phone</label><br />
+        <input type="phone" placeholder="Enter your Phone Number" name="phone" id="phone" onblur="validatePhone()"
+          required />
+      </div>
+
+  </form>
+
+  <newsletter-component></newsletter-component>
+  <footer-component></footer-component>
+  <script src="./components/header.js" type="module"></script>
+  <script src="./components/newsletter.js" type="module"></script>
+  <script src="./components/footer.js" type="module"></script>
+</body>
+
 </html>
