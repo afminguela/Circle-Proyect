@@ -6,6 +6,7 @@ footerTemplate.innerHTML =`
 
 .footer {
     margin-bottom: 50px;
+    margin-block-start:80px;
 }
 
 .footer p,
@@ -42,6 +43,7 @@ footerTemplate.innerHTML =`
 
 @media (min-width: 768px) {
     .footer {
+    
         display: flex;
         align-items: center;
         justify-content: space-between;

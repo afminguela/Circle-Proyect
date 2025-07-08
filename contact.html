@@ -12,45 +12,53 @@
 
 <body>
   <header-component></header-component>
-<uppy-button></uppy-button>
-  <form id="form-container" action="" method="get" class="formClass">
-    <h1>Contact Us</h1>
+  <uppy-button></uppy-button>
+ <form id="form-container" action="" method="get" class="formClass">
+  <h1>Contact Us</h1>
 
-    <div class="full-name">
-      <label for="full Name">Full Name</label><br />
-      <input type="text" placeholder="Enter your full name" name="name" id="name" onblur="validateName()" required />
-      <p id="name-error" hidden class="errorForm">Name Required, cannot leave this field empty.</p>
+  <div class="full-name">
+    <label for="full Name">Full Name</label><br />
+    <input type="text" placeholder="Enter your full name" name="name" id="name" onblur="validateName()" required />
+    <p id="name-error" hidden class="errorForm">Name Required, cannot leave this field empty.</p>
+  </div>
+
+  <div class="email-phone">
+    <div class="email">
+      <label for="email">Email</label><br />
+      <input type="email" placeholder="Enter your Email" name="email" id="email" onblur="validateMail()" required />
+      <p id="email-error1" hidden class="errorForm">Invalid email format, please enter a valid email.</p>
+      <p id="email-error2" hidden class="errorForm">Email Required, cannot leave this field empty.</p>
     </div>
-    <div class="email-phone">
-      <div class="email">
-        <label for="email">Email</label><br />
-        <input type="email" placeholder="Enter your Email" name="email" id="email" onblur="validateEmail()" required />
-      </div>
-      <div class="phone">
-        <label for="phone">Phone</label><br />
-        <input type="phone" placeholder="Enter your Phone Number" name="phone" id="phone" onblur="validatePhone()"
-          required />
-      </div>
+    
+    <div class="phone">
+      <label for="phone">Phone</label><br />
+      <input type="phone" placeholder="Enter your Phone Number" name="phone" id="phone" onblur="validatePhone()" required />
+      <p id="phone-error1" hidden class="errorForm">Phone Number Required, this is not a number.</p>
+      <p id="phone-error2" hidden class="errorForm">Phone Number Required, cannot leave this field empty.</p>
     </div>
+  </div>
 
-      <div class="message">
-        <label for="message">Message</label><br />
-        <textarea cols="33" rows="10" placeholder="Enter your message Number" name="message" id="message" onblur="validateMessage()"
-          required > </textarea>
-      </div>
-<button class="btn " id="btn-submit" type="button" onclick="sendForm()" >Submit</button>
-     
+  <div class="message">
+    <label for="message">Message</label><br />
+    <textarea cols="33" rows="10" placeholder="Enter your message Message" name="message" id="message" onblur="validateMessage()" required></textarea>
+    <p id="message-error1" hidden class="errorForm">Message too short, must be at least 10 characters.</p>
+    <p id="message-error2" hidden class="errorForm">Message Required, cannot leave this field empty.</p>
+  </div>
 
-
+  <button class="btn" id="btn-submit" type="button" onclick="checkValues()">Submit</button>
+<p id="general-error" hidden class="errorForm">Check All Fields, some are wrong filled</p>
+  
+<modal-component id="modal"></modal-component>
 </form>
 
-  
   <footer-component></footer-component>
-  <script src="./JS/contact.js" type ></script>
-   <script src="./JS/modal.js" type ></script>
+  <script src="./JS/contact.js" type></script>
+  <!-- <script src="./JS/modal.js" type ></script>-->
   <script src="./components/header.js" type="module"></script>
   <script src="./components/uppybtn.js" type="module"></script>
+  <script src="./components/modal.js" type="module"></script>
   <script src="./components/footer.js" type="module"></script>
+
 </body>
 
 </html>

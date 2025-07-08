@@ -74,24 +74,26 @@ input {
   height: 200px;
   margin-block-start: 10px;
   padding-left: 10px;
+  
+}
+#message::placeholder{
+    padding-top:15px;
 }
 
 #btn-submit{
     height: 70px;
     width: 100%;
-    margin-block-end:100px ;
+    margin-block-end:20px ;
     margin-block-start: 80px;
 }
 
 .errorForm {
-    color: red;
+    color: var(--Wrong);
     font-size: 14px;
     font-weight: bold;
 }
-/* input:required:invalid,
-textarea:required:invalid{
-    border: 2px solid var(--Wrong);
-} */
+
+
 
 input:required:valid,
 textarea:required:valid{
@@ -119,6 +121,11 @@ textarea:required:valid{
     flex-direction: row;
     gap:20px;
   }
+
+  #general-error{
+    
+    font-size: 30px;
+}
 }
 
 /* ----------- DESKTOP ---------------------- */
@@ -141,4 +148,8 @@ h1{
     flex-direction: row;
     gap:40px;
   }
+  #general-error{
+    
+    font-size: 30px;
+}
 }
