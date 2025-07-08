@@ -32,18 +32,18 @@
       </div>
     </div>
 
-      <div class="phone">
-        <label for="phone">Phone</label><br />
-        <input type="phone" placeholder="Enter your Phone Number" name="phone" id="phone" onblur="validatePhone()"
-          required />
+      <div class="message">
+        <label for="message">Message</label><br />
+        <textarea cols="33" rows="10" placeholder="Enter your message Number" name="message" id="message" onblur="validateMessage()"
+          required > </textarea>
       </div>
-
+<button class="btn " id="btn-submit" >Submit</button>
   </form>
 
-  <newsletter-component></newsletter-component>
+  
   <footer-component></footer-component>
   <script src="./components/header.js" type="module"></script>
-  <script src="./components/newsletter.js" type="module"></script>
+  
   <script src="./components/footer.js" type="module"></script>
 </body>
 
