@@ -30,7 +30,7 @@ class Modal extends HTMLElement {
   width: 90%;
   max-width: 500px;
   position: relative;
-  animation: modalSlideIn 0.3s ease;
+  animation: modalSlideIn 0.6s ease;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
@@ -47,7 +47,7 @@ class Modal extends HTMLElement {
 }
 
 .modal-header {
-  background-color: #2E57F0; /* Azul como en la imagen */
+  background-color:var(--Primary-default);
   color: white;
   padding: 15px 25px;
   text-align: center;
@@ -58,18 +58,18 @@ class Modal extends HTMLElement {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
-  color: white;
+  
 }
 
 .modal-body {
-  background-color: #E8EEFF; /* Azul claro como en la imagen */
+  background-color:var(    --Primary-tapped);
   padding: 40px 25px;
   text-align: center;
 }
 
 .modal-body h3 {
   margin: 0;
-  color: #2E57F0; /* Azul oscuro para el texto */
+  color: var(--Primary-default);
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.4;
@@ -84,8 +84,6 @@ class Modal extends HTMLElement {
   color: white;
   cursor: pointer;
   transition: color 0.2s ease;
-  background: none;
-  border: none;
   padding: 5px;
 }
 
@@ -94,7 +92,7 @@ class Modal extends HTMLElement {
   transform: scale(1.1);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 600px) {
   .modal-content {
     width: 95%;

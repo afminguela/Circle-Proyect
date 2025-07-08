@@ -119,17 +119,10 @@ function validateMessage(){
 }
 
 
-function sendForm(){
-   validateName();
-    validatePhone();
-    validateMail();
-    validateMessage();
-}
-
-function checkValues(){
+unction checkValues(){
     if(nameOk && phoneOk && mailOk && messageOk){
         console.log('todo ok');
-        sendForm();
+        
         showModal();
     } else {
         document.getElementById("general-error").hidden = false;

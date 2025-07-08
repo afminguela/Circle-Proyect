@@ -13,19 +13,16 @@ input {
   height: 60px;
   margin-block-start: 10px;
   padding-left: 10px;
- 
-  caret-color:red ;
+
+  caret-color: red;
 }
-
-
-
 
 #form-container {
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin-left:50px;
-  margin-right:50px;
+  margin-left: 50px;
+  margin-right: 50px;
   text-align: left;
 }
 
@@ -48,25 +45,29 @@ input {
   width: 100%;
   margin-block-start: 10px;
   margin-block-end: 20px;
-  
 }
+
 #email {
   width: 100%;
 }
+
 .phone {
   width: 100%;
   margin-block-start: 10px;
   margin-block-end: 20px;
 }
+
 #phone {
   width: 100%;
 }
+
 .message {
   margin-block-end: 20px;
   width: 100%;
   height: 200px;
   margin-block-start: 10px;
 }
+
 #message {
   width: 100%;
   border: none;
@@ -74,30 +75,28 @@ input {
   height: 200px;
   margin-block-start: 10px;
   padding-left: 10px;
-  
-}
-#message::placeholder{
-    padding-top:15px;
 }
 
-#btn-submit{
-    height: 70px;
-    width: 100%;
-    margin-block-end:20px ;
-    margin-block-start: 80px;
+#message::placeholder {
+  padding-top: 15px;
+}
+
+#btn-submit {
+  height: 70px;
+  width: 100%;
+  margin-block-end: 20px;
+  margin-block-start: 80px;
 }
 
 .errorForm {
-    color: var(--Wrong);
-    font-size: 14px;
-    font-weight: bold;
+  color: var(--Wrong);
+  font-size: 14px;
+  font-weight: bold;
 }
 
-
-
 input:required:valid,
-textarea:required:valid{
-    border: 2px solid var(--Right);
+textarea:required:valid {
+  border: 2px solid var(--Right);
 }
 
 /* ----------- TABLET ---------------------- */
@@ -105,11 +104,11 @@ textarea:required:valid{
 /* ----------- TABLET ---------------------- */
 
 @media (min-width: 380px) and (max-width: 769px) {
- 
-    h1{
-    font-size:60px;
-}
-    #form-container {
+  h1 {
+    font-size: 60px;
+  }
+
+  #form-container {
     width: 92%;
     margin: 10px 30px;
     text-align: left;
@@ -119,22 +118,21 @@ textarea:required:valid{
     display: flex;
     width: 100%;
     flex-direction: row;
-    gap:20px;
+    gap: 20px;
   }
 
-  #general-error{
-    
+  #general-error {
     font-size: 30px;
-}
+  }
 }
 
 /* ----------- DESKTOP ---------------------- */
 /* ----------- DESKTOP ---------------------- */
 /* ----------- DESKTOP ---------------------- */
 @media (min-width: 770px) {
-h1{
-    font-size:70px;
-}
+  h1 {
+    font-size: 70px;
+  }
 
   #form-container {
     width: 95%;
@@ -146,10 +144,10 @@ h1{
     display: flex;
     width: 100%;
     flex-direction: row;
-    gap:40px;
+    gap: 40px;
   }
-  #general-error{
-    
+
+  #general-error {
     font-size: 30px;
-}
+  }
 }
