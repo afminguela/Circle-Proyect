@@ -12,13 +12,14 @@
 
 <body>
   <header-component></header-component>
-
+<uppy-button></uppy-button>
   <form id="form-container" action="" method="get" class="formClass">
     <h1>Contact Us</h1>
 
     <div class="full-name">
-      <label for="fullName">Full Name</label><br />
+      <label for="full Name">Full Name</label><br />
       <input type="text" placeholder="Enter your full name" name="name" id="name" onblur="validateName()" required />
+      <p id="name-error" hidden class="errorForm">Name Required, cannot leave this field empty.</p>
     </div>
     <div class="email-phone">
       <div class="email">
@@ -37,13 +38,25 @@
         <textarea cols="33" rows="10" placeholder="Enter your message Number" name="message" id="message" onblur="validateMessage()"
           required > </textarea>
       </div>
-<button class="btn " id="btn-submit" >Submit</button>
-  </form>
+<button class="btn " id="btn-submit" type="button" onclick="sendForm()" >Submit</button>
+     
+<div class="modal">
+            <div class="modal-content">
+                <span class="close-button">x</span>
+                <p class="modal-title">Circle Agency</p>
+                <br>
+                <h4>Thank you! Your form has been sent successfully!!</h4>
+            </div>
+        </div>
 
+</form>
+i
   
   <footer-component></footer-component>
+  <script src="./JS/contact.js" type ></script>
+   <script src="./JS/modal.js" type ></script>
   <script src="./components/header.js" type="module"></script>
-  
+  <script src="./components/uppybtn.js" type="module"></script>
   <script src="./components/footer.js" type="module"></script>
 </body>
 

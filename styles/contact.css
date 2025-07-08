@@ -1,6 +1,6 @@
 h1 {
   text-align: left;
-  margin: 50px 20px;
+  margin: 100px 0px 10px 0px;
 }
 
 label {
@@ -13,21 +13,18 @@ input {
   height: 60px;
   margin-block-start: 10px;
   padding-left: 10px;
-}
-input:required:invalid,
-textarea:required:invalid{
-    border: 2px solid var(--Wrong);
+ 
+  caret-color:red ;
 }
 
-input:required:valid,
-textarea:required:valid{
-    border: 2px solid var(--Right);
-}
+
+
 
 #form-container {
   display: flex;
   flex-direction: column;
   width: 87%;
+  
   margin-left:20px;
   margin-right:40px;
   text-align: left;
@@ -76,7 +73,7 @@ textarea:required:valid{
   border: none;
   background: #6b708d1a;
   height: 200px;
-  
+  margin-block-start: 10px;
   padding-left: 10px;
 }
 
@@ -84,12 +81,31 @@ textarea:required:valid{
     width: 100%;
 }
 
+.errorForm {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* input:required:invalid,
+textarea:required:invalid{
+    border: 2px solid var(--Wrong);
+} */
+
+input:required:valid,
+textarea:required:valid{
+    border: 2px solid var(--Right);
+}
+
 /* ----------- TABLET ---------------------- */
 /* ----------- TABLET ---------------------- */
 /* ----------- TABLET ---------------------- */
 
 @media (min-width: 380px) and (max-width: 769px) {
-  #form-container {
+ 
+    h1{
+    font-size:60px;
+}
+    #form-container {
     width: 92%;
     margin: 10px 30px;
     text-align: left;
@@ -107,6 +123,10 @@ textarea:required:valid{
 /* ----------- DESKTOP ---------------------- */
 /* ----------- DESKTOP ---------------------- */
 @media (min-width: 770px) {
+h1{
+    font-size:70px;
+}
+
   #form-container {
     width: 95%;
     margin: 10px 30px;
