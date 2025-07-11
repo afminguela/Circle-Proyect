@@ -1,16 +1,3 @@
-// PARTE 1:Tengo que comprobar que los datos de cada imput son de los formatos correctos, si son así, pongo en verde el campo, si no, en rojo y se lee un mensaje de error. 
-
-// Pasos: 
-// - declaro variables "marcador" para cada campo. 
-// - recojo el valor del campo. 
-//  
-// -lo comparo con el tipo que necesito 
-
-//monto el  if, si ok : cambio la variable y pasan cosas de Css, si no : mantiene valor inicial falso y pasan otras cosas de css.  
-
-//PARTE 2: si todos los campos son true, envío el formulario y levanto un modal (que simula el envío de los datos)
-
-
 
 let nameOk = false;
 let phoneOk = false;
@@ -33,7 +20,7 @@ function validateName(){
         nameOk = true;
     }
     
-    console.log(`la variable nameOk esta: ${nameOk}`);
+  
 }
 
 function validatePhone(){
@@ -60,7 +47,7 @@ function validatePhone(){
         phoneOk = true;
     }
     
-    console.log(`la variable phoneOk esta: ${phoneOk}`);
+   
 }
 
 function validateMail(){
@@ -87,7 +74,7 @@ function validateMail(){
         mailOk = true;
     }
     
-    console.log(`la variable mailOk esta: ${mailOk}`);
+    
 }
 
 
@@ -135,7 +122,7 @@ function showModal(){
     if(modalComponent && modalComponent.showModal) {
         modalComponent.showModal(); 
     } else {
-        console.error('Modal component no encontrado o método showModal no disponible');
+        console.error('Modal component not found or not implemented at all');
     }
 }
 function hideModal(){
