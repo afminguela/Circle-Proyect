@@ -46,7 +46,7 @@ keepDataOnLocalStorage().then(projects => {
             <div class="project-inner-card">
               <h4 class="project-title">${project.name}</h4>
               <p class="project-description">${project.description}</p>
-              <a class="learn-more" href="./pages/projects.html?id=${project.uuid}">Learn more</a>
+              <a class="learn-more" href="./pages/project.html?id=${project.uuid}">Learn more</a>
             </div>
           </a>
         
