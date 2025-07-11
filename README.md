@@ -176,3 +176,7 @@ function checkValues(){
 - 📱 **Mobile-First** simplifica el desarrollo responsive
 - ⚡ **Validación en tiempo real** mejora significativamente la UX
 - 🎨 **CSS Variables** hacen el mantenimiento mucho más fácil
+
+
+### **Documentación Exhaustiva**
+[DeepWiki Documentation]( https://deepwiki.com/afminguela/Circle-Proyect)
