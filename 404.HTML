@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+  <link rel="stylesheet" href="./styles/global.css" />
+</head>
+<body>
+    <style>
+.contenedor-404 {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 5em;
+  margin-bottom: 0.1em;
+  color: #ff7f50;
+}
+
+p {
+  font-size: 1.3em;
+  margin-bottom: 2em;
+}
+
+.gatos-cables img {
+  width: 280px;
+  max-width: 100%;
+  margin-bottom: 2em;
+  animation: balanceo 2s infinite alternate ease-in-out;
+}
+
+@keyframes balanceo {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.boton-volver {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #ff7f50;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s;
+}
+
+.boton-volver:hover {
+  background: #ff4f1f;
+}
+
+    </style>
+<header-component></header-component>
+<!-- Proudly hecho con perplexity-->
+      <div class="contenedor-404">
+    <h1>¡404!</h1>
+    <p>¡Oh no! Los gatos se han enredado con los cables y no encuentran esta página.</p>
+    <div class="gatos-cables">
+      <img src="./media/404.png" alt="Gatos enredados con cables">
+    </div>
+    <a href="/" class="boton-volver">Volver al inicio</a>
+  </div>
+    <footer-component></footer-component>
+
+    <script src="./components/header.js" type="module"></script>
+     <script src="./components/uppybtn.js" type="module"></script>
+    <script src="./components/newsletter.js" type="module"></script>
+    <script src="./components/footer.js" type="module"></script>
+</body>
+</html>

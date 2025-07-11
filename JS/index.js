@@ -41,12 +41,12 @@ keepDataOnLocalStorage().then(projects => {
       const article = document.createElement("article");
       article.innerHTML = `
         
-          <a class="project-wrapper" href="./pages/projects.html?id=${project.uuid}">
+          <a class="project-wrapper" href="./project.html?id=${project.uuid}">
             <img class="img-project" src="https://github.com/ironhack-jc/mid-term-api/blob/main/${project.uuid}.jpg?raw=true" alt="${project.name}">
             <div class="project-inner-card">
               <h4 class="project-title">${project.name}</h4>
               <p class="project-description">${project.description}</p>
-              <a class="learn-more" href="./pages/project.html?id=${project.uuid}">Learn more</a>
+              <a class="learn-more" href="./project.html?id=${project.uuid}">Learn more</a>
             </div>
           </a>
         
