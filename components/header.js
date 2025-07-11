@@ -110,7 +110,7 @@ headerTemplate.innerHTML = `
     display: block;
     margin-left: auto;
     order: 2;
-    margin-left: auto;
+    
   }
  
   .nav {
@@ -218,14 +218,8 @@ class HeaderComponent extends HTMLElement {
 
   connectedCallback() {
     const checkbox = this.querySelector("#nav-toggle");
-    const label = this.querySelector(".nav-toggle-label");
-    const navLinks = this.querySelectorAll(".nav a");
 
-    if (label && checkbox) {
-      label.addEventListener("click", () => {
-        checkbox.checked = !checkbox.checked;
-      });
-    }
+    const navLinks = this.querySelectorAll(".nav a");
 
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
@@ -233,15 +227,29 @@ class HeaderComponent extends HTMLElement {
       });
     });
 
-     const button = this.querySelector('.btn-header');
-        const href = button.getAttribute('data-href');
-        
-        if (button && href) {
-            button.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                window.location.href = href; 
-            });
-        }
+    const button = this.querySelector(".btn-header");
+
+    const button2 = this.querySelector(".btn-header2");
+    const href = button.getAttribute("data-href");
+
+    if (button1) {
+      const href1 = button1.getAttribute("data-href");
+      if (href1) {
+        button1.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = href;
+        });
+      }
+    }
+    if (button2) {
+      const href2 = button2.getAttribute("data-href");
+      if (href2) {
+        button2.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = href;
+        });
+      }
+    }
   }
 }
 customElements.define("header-component", HeaderComponent);
