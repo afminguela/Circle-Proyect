@@ -1,23 +1,167 @@
-
-
-
-
-
-/* ------------------------- TABLET */
-/* ------------------------- TABLET */
-/* ------------------------- TABLET */
-
-
-@media (min-width: 380px) and (max-width: 769px){
-
+/* MAIN PROJECT ----MOVIL BASE */
+/* MAIN PROJECT ----MOVIL BASE */
+/* MAIN PROJECT ----MOVIL BASE */
+#project {
+  margin: auto;
 }
 
+.title {
+  text-align: left;
+  font-size: 35px;
+  margin-left: 40px;
+  margin-top: 10%;
+}
 
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-block-end: 30px;
+}
+
+.project-description-brief {
+  color: var(--Neutral-medium);
+  font-size: 12px;
+  margin: 0;
+}
+
+.project-completed {
+  color: var(--Neutral-dark);
+  font-size: 10px;
+  margin: 0;
+}
+.completed-data {
+  color: var(--Neutral-medium);
+  font-size: 10px;
+  margin: 0;
+  margin-right: 40px;
+}
+
+.project-img-div {
+  width: 100%;
+  margin-top: 4%;
+  margin-bottom: 10%;
+}
+
+.project-img {
+  width: 84%;
+  height: 40%;
+  object-fit: cover;
+  filter: drop-shadow(5px 5px 20px #c414ca74);
+}
+.project-description {
+  font-family: Roboto;
+  color: var(--Neutral-medium);
+  margin-bottom: 7%;
+  text-align: left;
+  background-color: var(--Neutral-light);
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 11px;
+}
+
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+
+@media (min-width: 380px) and (max-width: 769px) {
+}
 
 /* ----------------------------  DESKTOP */
 /* ----------------------------  DESKTOP */
 /* ----------------------------  DESKTOP */
 @media (min-width: 770px) {
+}
 
+/* OTHER PROYECTS ------- MOvil Base */
+/* OTHER PROYECTS ------- MOvil Base */
+/* OTHER PROYECTS ------- MOvil Base */
+.other-projects {
+  margin: auto;
+}
+.other-projects h2 {
+  text-align: left;
+  font-size: 35px;
+  margin-left: 40px;
+  margin-top: 10%;
+  color: var(--Neutral-dark);
+}
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
+.project-card {
+  margin: 20px auto;
+  padding-bottom: 10px;
+  width: 80%;
+  background-color: var(--White);
+  text-align: left;
+  color: var(--Black);
+}
+.project-card:hover {
+  box-shadow: 10px 5px 5px var(--Neutral-medium);
+}
 
+.img-other-project {
+  display: inline;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-inner-card {
+  background-color: var(--White);
+  margin: 10px;
+  padding-left: 10px;
+}
+.project-card-title {
+  font-size: 20px;
+  margin-block-end: 10px;
+}
+.project-inner-card p {
+  color: var(--NeutralMedium);
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-family: Roboto;
+  text-align: left;
+}
+
+.learn-more {
+  
+  margin-top: 50px;
+  color: var(--Primary-default);
+  font-size: 13px;
+}
+
+.learn-more:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+/* ------------------------- TABLET */
+
+@media (min-width: 380px) and (max-width: 769px) {
+  .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    width: 45%;
+  }
+}
+
+/* ----------------------------  DESKTOP */
+/* ----------------------------  DESKTOP */
+/* ----------------------------  DESKTOP */
+@media (min-width: 770px) {
+  .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .project-card {
+    width: 30%;
+  }
 }

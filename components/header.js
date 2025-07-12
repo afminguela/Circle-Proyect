@@ -196,10 +196,10 @@ headerTemplate.innerHTML = `
 <a href="../index.html">Home</a>
 </li>
 <li>
-<a href="#">Projects</a>
+<a href="../project.html?id=1">Projects</a>
 </li>
 <li>
-<a href="#">Services</a>
+<a href="../index.html#services-section">Services</a>
 </li>
 <button class="btn btn-header2" type="button" data-href="../contact.html"> Contact Us</button>
 </ul>

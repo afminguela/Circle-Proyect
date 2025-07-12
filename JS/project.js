@@ -1,13 +1,3 @@
-// function getProjectsFromLocalStorage() {
-//   try {
-//     const data = localStorage.getItem('projectData');
-//     return data ? JSON.parse(data) : null;
-//   } catch (error) {
-//     console.error('Error leyendo Local Storage:', error);
-//     return null;
-//   }
-// }
-
 
 window.addEventListener("load", async () => {
     try {
@@ -62,14 +52,14 @@ function addMainProject(project) {
     const projectHTML = `
           <h1 class="title">${project.name}</h1>
           <div class="subtitle">
-          <span class="UI-design-title">${project.description}</span>
+          <span class="project-description-brief">${project.description}</span>
   
-          <span class="completed-title">Completed on
-              <span class="completed-title-data">${project.completed_on}</span>
+          <span class="project-completed">Completed on
+              <span class="completed-data">${project.completed_on}</span>
           </span>
           </div>
-          <div class="project-image-section">
-          <img class="project-image" src="${project.image}" alt="${project.name} image" />
+          <div class="project-img-div">
+          <img class="project-img" src="${project.image}" alt="${project.name} image" />
           </div>
   
           <article class="project-description">
@@ -100,10 +90,10 @@ function jsonProjectToOtherHtmlArticle(project) {
     const projectHTML = `
           <article class="project-card">
               <a class="project-wrapper" href="./project.html?id=${project.uuid}">
-                  <img class="img-project" src="${project.image}" alt="${project.name} image" />
+                  <img class="img-other-project" src="${project.image}" alt="${project.name} image" />
                   <div class="project-inner-card">
-                  <h4 class="project-title">${project.name}</h4>
-                  <p class="project-description capitalize">${project.description}</p>
+                  <h4 class="project-card-title">${project.name}</h4>
+                  <p>${project.description}</p>
                   <a class="learn-more" href="./project.html?id=${project.uuid}">Learn more</a>
                   </div>
               </a>

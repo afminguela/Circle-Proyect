@@ -49,9 +49,7 @@ newsletterTemplate.innerHTML = `
             border-width: 0;
             }
 
-    .btn-news{
-
-    }
+    
     @media (min-width: 761px){
     
     .form-email{
@@ -66,6 +64,9 @@ newsletterTemplate.innerHTML = `
      width:200%;
     }
     
+    .btn-news{
+    margin-block-end:30px;
+    }
     }
 
     </style>
