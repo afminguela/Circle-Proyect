@@ -182,14 +182,14 @@ headerTemplate.innerHTML = `
 <header class="header">
 
 <div class="logo">
-<img src="./media/logos/circle.svg" alt="Circle's Logo">
+<img src="./media/logos/circle.svg" alt="Circle's Logo" onclick="window.location.href='./index.html'">
 </div>
 <input aria-label="burger menu" type="checkbox" id="nav-toggle" class="nav-toggle" />
-<label for="nav-toggle" class="nav-toggle-label">
-<span></span>
-<span></span>
-<span></span>
-</label>
+<div for="nav-toggle" class="nav-toggle-label">
+<spana ria-label="burger menu deco"></spana>
+<span aria-label="burger menu deco"></span>
+<span aria-label="burger menu deco"></span>
+</div>
 <nav class="nav">
 <ul aria-label="Menu" class="">
 <li>

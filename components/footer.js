@@ -89,7 +89,7 @@ footerTemplate.innerHTML =`
 
 <div class="footer-Left">
 <div class="footer-Left--logo">
-<img src="./media/logos/circle.svg" alt="Circle's Logo">
+<img src="./media/logos/circle.svg" alt="Circle's Logo" onclick="window.location.href='./index.html'">
 </div>
 <address>
 <p>2972 Westheimer Rd. Santa Ana, <br>
@@ -100,22 +100,22 @@ Illinois 85486</p>
 
 <ul aria-label="Menu" class="footer-Right">
 <li>
-<a href="#">Team</a>
+<a href="../index.html">Team</a>
 </li>
 <li>
-<a href="#">Services</a>
+<a href="../index.html#services-section">Services</a>
 </li>
 <li>
-<a href="#">About Us</a>
+<a href="../index.html">About Us</a>
 </li>
 <li>
-<a href="#">Press</a>
+<a href="../contact.html">Press</a>
 </li>
 <li>
-<a href="#">Projects</a>
+<a href="../project.html?id=1">Projects</a>
 </li>
 <li>
-<a href="#">Privacy Policy</a>
+<a href="../index.html">Privacy Policy</a>
 </li>
 
 </ul>
