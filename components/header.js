@@ -191,7 +191,7 @@ headerTemplate.innerHTML = `
 <span aria-label="burger menu deco"></span>
 </div>
 <nav class="nav">
-<ul aria-label="Menu" class="">
+<ul aria-label="Menu">
 <li>
 <a href="../index.html">Home</a>
 </li>
