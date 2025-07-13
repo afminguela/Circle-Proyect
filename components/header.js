@@ -5,10 +5,10 @@ headerTemplate.innerHTML = `
 .header {
   display: flex;
   width: 100%;
-
   justify-content: space-between; 
-  align-items: baseline; 
+  align-items: center; 
   gap: 20px;
+  margin-top:30px
 }
 
 .header li {
@@ -28,6 +28,11 @@ headerTemplate.innerHTML = `
 .header a:hover {
   text-decoration: underline;
 }
+
+.logo {
+  z-index: 101;
+}
+
 
 .nav-toggle {
   display: none;
@@ -51,22 +56,30 @@ headerTemplate.innerHTML = `
   margin-left: auto; 
 }
 
+.nav-toggle {
+  display: none;
+}
+
 .nav-toggle-label {
   display: none; 
   cursor: pointer;
   width: 2rem;
   height: 2rem;
   position: relative;
+  z-index:102;
+ 
 }
 
 .nav-toggle-label span {
-  background-color: var(--Neutral-medium);
+  background-color: var(--Neutral-dark);
   height: 2px;
   width: 100%;
   display: block;
   position: absolute;
   left: 0;
   transition: var(--transition-normal);
+  border-radius: 1px;
+  
 }
 
 .nav-toggle-label span:nth-child(1) {
@@ -92,14 +105,16 @@ headerTemplate.innerHTML = `
   transform: translateY(-0.5rem) rotate(-45deg);
 }
 
-@media (min-width: 320px) AND (max-width: 760px) {
+@media (max-width: 760px) {
   .header {
     padding: 0px 15px 0px 15px; 
     position: relative; 
     justify-content: space-between;
   }
+
 .logo {
-    order: 1; 
+    order: 1;
+    flex-shrink: 0;
   }
   .btn-header {
     order: 3; 
@@ -107,7 +122,7 @@ headerTemplate.innerHTML = `
   }
 
   .nav-toggle-label {
-    display: block;
+    display: block !important;
     margin-left: auto;
     order: 2;
     
@@ -123,13 +138,13 @@ headerTemplate.innerHTML = `
     width: 100%;
     padding: 1rem;
     text-align: center;
-    border-top: 2px solid #ccc;
+    border-top: 2px solid var(--White);
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
 
   #nav-toggle:checked ~ .nav {
-    display: block;
+    display: block !important;
   }
 
   .nav ul {
@@ -143,6 +158,13 @@ headerTemplate.innerHTML = `
     text-align: center;
     padding: 0.5rem 0;
   }
+
+    .btn-header2 {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
 }
 
 @media (min-width: 761px) {
@@ -153,11 +175,11 @@ headerTemplate.innerHTML = `
   }
 
   .nav-toggle-label {
-    display: none;
+    display: none !important;
   }
   
   .nav {
-    display: flex; 
+    display: flex !important; 
     position: static;
     width: auto;
     padding: 0;
@@ -174,7 +196,8 @@ headerTemplate.innerHTML = `
     display: block;
   }
     .btn-header2{
-    display:none}
+    display:none
+  }
 }
 
 </style>
@@ -184,12 +207,12 @@ headerTemplate.innerHTML = `
 <div class="logo">
 <img src="./media/logos/circle.svg" alt="Circle's Logo" onclick="window.location.href='./index.html'">
 </div>
-<input aria-label="burger menu" type="checkbox" id="nav-toggle" class="nav-toggle" />
-<div for="nav-toggle" class="nav-toggle-label">
-<spana ria-label="burger menu deco"></spana>
+<input aria-label="burger menu" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" class="nav-toggle" />
+<label for="nav-toggle" class="nav-toggle-label" aria-label="Open navigation menu" >
 <span aria-label="burger menu deco"></span>
 <span aria-label="burger menu deco"></span>
-</div>
+<span aria-label="burger menu deco"></span>
+</label>
 <nav class="nav">
 <ul aria-label="Menu">
 <li>
@@ -216,43 +239,38 @@ class HeaderComponent extends HTMLElement {
     this.innerHTML = headerTemplate.innerHTML;
   }
 
- connectedCallback() {
+  connectedCallback() {
     const checkbox = this.querySelector("#nav-toggle");
     const navLinks = this.querySelectorAll(".nav a");
 
-   
     navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            checkbox.checked = false;
-        });
+      link.addEventListener("click", () => {
+        checkbox.checked = false;
+      });
     });
 
- 
-    const button1 = this.querySelector(".btn-header");   
-    const button2 = this.querySelector(".btn-header2");   
+    const button1 = this.querySelector(".btn-header");
+    const button2 = this.querySelector(".btn-header2");
 
     if (button1) {
-        const href1 = button1.getAttribute("data-href");
-        if (href1) {
-            button1.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.location.href = href1;
-            });
-        }
+      const href1 = button1.getAttribute("data-href");
+      if (href1) {
+        button1.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = href1;
+        });
+      }
     }
-
 
     if (button2) {
-        const href2 = button2.getAttribute("data-href");
-        if (href2) {
-            button2.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.location.href = href2;
-            });
-        }
+      const href2 = button2.getAttribute("data-href");
+      if (href2) {
+        button2.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = href2;
+        });
+      }
     }
-}
-
-   
+  }
 }
 customElements.define("header-component", HeaderComponent);
