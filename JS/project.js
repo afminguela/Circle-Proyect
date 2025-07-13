@@ -59,7 +59,9 @@ function addMainProject(project) {
           </span>
           </div>
           <div class="project-img-div">
-          <img class="project-img" src="${project.image}" alt="${project.name} image" />
+          <img class="project-img" src="${project.image}" alt="Screenshot of ${project.name} project showing ${project.description}"
+      loading="lazy"
+      />
           </div>
   
           <article class="project-description">

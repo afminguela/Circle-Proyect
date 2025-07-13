@@ -42,7 +42,9 @@ keepDataOnLocalStorage().then(projects => {
       article.innerHTML = `
         
           <a class="project-wrapper" href="./project.html?id=${project.uuid}">
-            <img class="img-project" src="https://github.com/ironhack-jc/mid-term-api/blob/main/${project.uuid}.jpg?raw=true" alt="${project.name}">
+            <img class="img-project" src="https://github.com/ironhack-jc/mid-term-api/blob/main/${project.uuid}.jpg?raw=true" alt="Screenshot of ${project.name} project showing ${project.description}"
+      loading="lazy"
+          >
             <div class="project-inner-card">
               <h4 class="project-title">${project.name}</h4>
               <p class="project-description">${project.description}</p>

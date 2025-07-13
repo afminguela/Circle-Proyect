@@ -1,193 +1,179 @@
-class Modal extends HTMLElement {
-    constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: "open" });
-
-        shadow.innerHTML = `
-        <style>
-       
-.modal {
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.modal.hidden {
-  display: none;
-}
-
-.modal-content {
-  background-color: white;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-  animation: modalSlideIn 0.6s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-@keyframes modalSlideIn {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
+class ModalComponent extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.isOpen = false;
+    this.previousFocus = null;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  connectedCallback() {
+    this.render();
+    this.setupEventListeners();
   }
-}
 
-.modal-header {
-  background-color:var(--Primary-default);
-  color: white;
-  padding: 15px 25px;
-  text-align: center;
-  position: relative;
-}
-
-.modal-header h2 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  
-}
-
-.modal-body {
-  background-color:var(    --Primary-tapped);
-  padding: 40px 25px;
-  text-align: center;
-}
-
-.modal-body h3 {
-  margin: 0;
-  color: var(--Primary-default);
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  padding: 5px;
-}
-
-.close:hover {
-  color: #ddd;
-  transform: scale(1.1);
-}
-
-
-@media (max-width: 600px) {
-  .modal-content {
-    width: 95%;
-    margin: 20px;
-  }
-  
-  .modal-header {
-    padding: 12px 20px;
-  }
-  
-  .modal-header h2 {
-    font-size: 1.1rem;
-  }
-  
-  .modal-body {
-    padding: 30px 20px;
-  }
-  
-  .modal-body h3 {
-    font-size: 1.1rem;
-  }
-}
-
-</style>
-
-<div id="modal" class="modal hidden">
-  <div class="modal-content">
-    <span class="close">×</span>
-    <div class="modal-header">
-      <h2>Circle Agency</h2>
-    </div>
-    <div class="modal-body">
-      <h3>Thank you! Your form has been sent successfully!!</h3>
-    </div>
-  </div>
-</div>
-`;
-
-
-}
-connectedCallback() {
-        const closeButton = this.shadowRoot.querySelector(".close");
-        const modal = this.shadowRoot.querySelector("#modal");
+  render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        .modal-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          z-index: 9999;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+        }
         
+        .modal-content {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          max-width: 400px;
+          width: 90%;
+          text-align: center;
+          position: relative;
+          max-height: 80vh;
+          overflow-y: auto;
+        }
         
-        closeButton.addEventListener("click", () => {
-            this.hideModal();
-        });
+        .close-button {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          padding: 0.5rem;
+          border-radius: 4px;
+        }
         
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                this.hideModal();
-            }
-        });
-    }
-
-    showModal() {
-        const modal = this.shadowRoot.querySelector("#modal");
-        modal.classList.remove("hidden");
-    }
-
-    hideModal() {
-        const modal = this.shadowRoot.querySelector("#modal");
-        modal.classList.add("hidden");
-    }
-
-    this.addEventListener('keydown', this.handleKeydown.bind(this));
-    this.trapFocus();
-
-}
-
-handleKeydown(e) {
-  if (e.key === 'Escape' && this.isOpen) {
-    this.hideModal();
+        .close-button:hover,
+        .close-button:focus {
+          background: #f0f0f0;
+          outline: 2px solid #072AC8;
+        }
+        
+        .modal-title {
+          margin-top: 0;
+          color: #292E47;
+        }
+        
+        .modal-description {
+          margin-bottom: 1.5rem;
+          color: #6B708D;
+        }
+      </style>
+      
+      <div 
+        class="modal-overlay" 
+        role="dialog" 
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
+        <div class="modal-content">
+          <button class="close-button" aria-label="Cerrar modal">×</button>
+          <h2 id="modal-title" class="modal-title">¡Mensaje enviado!</h2>
+          <p id="modal-description" class="modal-description">
+            Gracias por contactarnos. Te responderemos pronto.
+          </p>
+        </div>
+      </div>
+    `;
   }
-}
-trapFocus(){
-  const focusableElements = this.querySelectorAll(
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  );
-  const firstElement = focusableElements[0];
-  const lastElement = focusableElements[focusableElements.length - 1];
-  
-  this.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-      if (e.shiftKey && document.activeElement === firstElement) {
-        e.preventDefault();
-        lastElement.focus();
-      } else if (!e.shiftKey && document.activeElement === lastElement) {
-        e.preventDefault();
-        firstElement.focus();
+
+  setupEventListeners() {
+    const overlay = this.shadowRoot.querySelector('.modal-overlay');
+    const closeButton = this.shadowRoot.querySelector('.close-button');
+    
+    // Cerrar con botón X
+    closeButton.addEventListener('click', () => this.hideModal());
+    
+    // Cerrar con clic fuera del modal
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        this.hideModal();
       }
+    });
+    
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.hideModal();
+      }
+    });
+  }
+
+  showModal() {
+    this.previousFocus = document.activeElement;
+    const overlay = this.shadowRoot.querySelector('.modal-overlay');
+    
+    overlay.style.display = 'flex';
+    document.body.classList.add('modal-open');
+    this.isOpen = true;
+    
+    // Enfocar botón de cerrar
+    setTimeout(() => {
+      const closeButton = this.shadowRoot.querySelector('.close-button');
+      closeButton.focus();
+    }, 100);
+    
+    this.trapFocus();
+  }
+
+  hideModal() {
+    const overlay = this.shadowRoot.querySelector('.modal-overlay');
+    
+    overlay.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    this.isOpen = false;
+    
+    // Restaurar foco
+    if (this.previousFocus) {
+      this.previousFocus.focus();
     }
-  });
+  }
+
+  trapFocus() {
+    const focusableElements = this.shadowRoot.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    const handleTabKey = (e) => {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    };
+    
+    // Solo añadir listener si modal está abierto
+    if (this.isOpen) {
+      document.addEventListener('keydown', handleTabKey);
+      
+      // Limpiar listener cuando se cierre
+      const originalHideModal = this.hideModal.bind(this);
+      this.hideModal = () => {
+        document.removeEventListener('keydown', handleTabKey);
+        originalHideModal();
+      };
+    }
+  }
 }
 
-
-customElements.define("modal-component",Modal);
+customElements.define('modal-component', ModalComponent);
