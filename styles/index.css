@@ -58,7 +58,7 @@
 /* --------------------TABLET */
 /* --------------------TABLET */
 /* --------------------TABLET */
-@media (min-width: 320px) and (max-width: 760px) {
+@media (min-width: 480px) and (max-width: 769px) {
     .hero {
         flex-direction: row;
         width: 90%;
@@ -113,7 +113,7 @@
 /* --------------  DESKTOP */
 /* --------------  DESKTOP */
 
-@media (min-width: 761px) {
+@media (min-width: 770px) {
     .hero {
         flex-direction: row;
         width: 80%;

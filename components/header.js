@@ -209,9 +209,9 @@ headerTemplate.innerHTML = `
 </div>
 <input aria-label="burger menu" type="checkbox" id="nav-toggle" aria-label="Toggle navigation menu" class="nav-toggle" />
 <label for="nav-toggle" class="nav-toggle-label" aria-label="Open navigation menu" >
-<span aria-label="burger menu deco"></span>
-<span aria-label="burger menu deco"></span>
-<span aria-label="burger menu deco"></span>
+<span ></span>
+<span ></span>
+<span ></span>
 </label>
 <nav class="nav">
 <ul aria-label="Menu">

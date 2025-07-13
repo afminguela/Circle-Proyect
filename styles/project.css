@@ -37,6 +37,11 @@
   margin-right: 40px;
 }
 
+.project-card:hover {
+  box-shadow: 10px 5px 5px var(--Neutral-medium);
+}
+
+
 .project-img-div {
   width: 100%;
   margin-top: 4%;
@@ -54,7 +59,7 @@
   color: var(--Neutral-medium);
   margin-bottom: 7%;
   text-align: left;
-  background-color: var(--Neutral-light);
+  
   margin-left: 40px;
   margin-right: 40px;
   font-size: 11px;
