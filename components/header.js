@@ -219,7 +219,7 @@ class HeaderComponent extends HTMLElement {
  connectedCallback() {
     const checkbox = this.querySelector("#nav-toggle");
     const navLinks = this.querySelectorAll(".nav a");
-
+    const menuToggle = this.querySelector("#nav-toggle");
    
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
@@ -227,6 +227,12 @@ class HeaderComponent extends HTMLElement {
         });
     });
 
+    menuToggle.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    menuToggle.checked = !menuToggle.checked;
+  }
+});
  
     const button1 = this.querySelector(".btn-header");   
     const button2 = this.querySelector(".btn-header2");   
@@ -253,6 +259,7 @@ class HeaderComponent extends HTMLElement {
     }
 }
 
+;
    
 }
 customElements.define("header-component", HeaderComponent);

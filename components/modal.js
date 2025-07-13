@@ -158,6 +158,36 @@ connectedCallback() {
         const modal = this.shadowRoot.querySelector("#modal");
         modal.classList.add("hidden");
     }
+
+    this.addEventListener('keydown', this.handleKeydown.bind(this));
+    this.trapFocus();
+
 }
+
+handleKeydown(e) {
+  if (e.key === 'Escape' && this.isOpen) {
+    this.hideModal();
+  }
+}
+trapFocus(){
+  const focusableElements = this.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+  
+  this.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  });
+}
+
 
 customElements.define("modal-component",Modal);

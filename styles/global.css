@@ -3,6 +3,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 :root {
+  /* Colors w contrast  AAA */
+  --Primary-default: #072AC8;
+  --Neutral-dark: #292E47;
+  --Neutral-medium: #656B86;
+  --Right: #28A745;
+  --Wrong: #DC3545;
+  
+  /* Scalable font sizes */
+  --font-size-small: clamp(0.875rem, 2vw, 1rem);
+  --font-size-body: clamp(1rem, 2.5vw, 1.125rem);
+  --font-size-h3: clamp(1.5rem, 4vw, 2rem);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+/* Clamped font size */
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+p { font-size: clamp(1rem, 2.5vw, 1.125rem); }
+
+/* Respeto por preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Modo alto contraste */
+@media (prefers-contrast: high) {
+  :root {
+    --Primary-default: #000000;
+    --Neutral-dark: #000000;
+    --background: #FFFFFF;
+  }
+}
+
+/* Espaciado responsive */
+.container {
+  padding: clamp(1rem, 5vw, 2rem);
+  max-width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+
+:root {
   /* colores  Base */
   --accent: #43d2ff;
   --bg-base: #F2F4FC;
