@@ -153,7 +153,7 @@ Circle-Proyect/
 | Herramienta | Versión | Propósito |
 |---|---|---|
 | 🖥️ **VS Code** | 1.84.2 | IDE principal |
-| 🌐 **Chrome** | 119.0.6045 | Testing en navegador |
+| 🌐 **Chrome** | 138.0.7204.93 | Testing en navegador |
 | 🔄 **Git** | 2.42.0 | Control de versiones |
 | 🤖 **Copilot** | v1.140.0 | Asistencia IA |
 
@@ -855,7 +855,7 @@ Circle-Proyect/
 | Tool | Version | Purpose |
 |---|---|---|
 | 🖥️ **VS Code** | 1.84.2 | Primary IDE |
-| 🌐 **Chrome** | 119.0.6045 | Browser testing |
+| 🌐 **Chrome** | 138.0.7204.93 | Browser testing |
 | 🔄 **Git** | 2.42.0 | Version control |
 | 🤖 **Copilot** | v1.140.0 | AI assistance |
 
