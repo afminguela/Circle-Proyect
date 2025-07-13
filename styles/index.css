@@ -58,7 +58,7 @@
 /* --------------------TABLET */
 /* --------------------TABLET */
 /* --------------------TABLET */
-@media (min-width: 380px) and (max-width: 760px) {
+@media (min-width: 320px) and (max-width: 760px) {
     .hero {
         flex-direction: row;
         width: 90%;
@@ -188,7 +188,7 @@
 /* ------------------------- TABLET */
 /* ------------------------- TABLET */
 /* ------------------------- TABLET */
-@media (min-width: 380px) and (max-width: 760px) {
+@media (min-width: 320px) and (max-width: 760px) {
     .logos {
         width: 90%;
     }
@@ -302,7 +302,7 @@
 /* ------------------------- TABLET */
 
 
-@media (min-width: 380px) and (max-width: 769px){
+@media (min-width: 320px) and (max-width: 769px){
 .project-wrapper {
         background-color: var(--NeutralLight);
     }
@@ -467,7 +467,7 @@
 /* ------------------------- TABLET */
 /* ------------------------- TABLET */
 
-@media (min-width: 380px) and (max-width: 769px) {
+@media (min-width: 320px) and (max-width: 769px) {
     .testimonial {
         margin: 50px auto;
         max-width: 700px;

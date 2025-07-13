@@ -92,7 +92,7 @@ headerTemplate.innerHTML = `
   transform: translateY(-0.5rem) rotate(-45deg);
 }
 
-@media (max-width: 760px) {
+@media (min-width: 320px) AND (max-width: 760px) {
   .header {
     padding: 0px 15px 0px 15px; 
     position: relative; 
