@@ -4,7 +4,7 @@
 
 ![Circle Agency Logo](./media/logos/circle.svg)
 
-[]()
+[Circle Agency on Vercel](http://circle-proyect.vercel.app)
 
 **Una página web corporativa moderna para un estudio de diseño digital**
 
@@ -14,6 +14,7 @@
 [![Web Components](https://img.shields.io/badge/Web_Components-29ABE2?style=for-the-badge&logo=webcomponents.org&logoColor=white)](https://www.webcomponents.org/)
 
 </div>
+
 
 ---
 
@@ -489,253 +490,50 @@ function checkValues() {
 </details>
 
 --- 
-## ♿ Accesibilidad y Usabilidad
+## ♿ Accesibilidad
 
-### 🎯 Principios de Accesibilidad Implementados
+### 🎯 Implementación WCAG 2.1
 
-Este proyecto sigue las **WCAG 2.1 Guidelines** y principios de diseño inclusivo para garantizar que sea accesible para todos los usuarios, incluyendo personas con discapacidades.
+Este proyecto sigue las **WCAG 2.1 Guidelines** para garantizar accesibilidad universal.
 
-### 🏷️ Etiquetado Semántico
+#### 🏷️ HTML Semántico y ARIA
 
-#### HTML Semántico
+- ✅ **Elementos semánticos** → `<header>`, `<main>`, `<nav>`, `<section>`
+- ✅ **ARIA labels** → Navegación y formularios etiquetados
+- ✅ **Roles apropiados** → `role="alert"`, `aria-live="polite"`
 
-| Elemento | Propósito | Implementación |
+#### ⌨️ Navegación por Teclado
+
+- ✅ **Tab Navigation** → Orden lógico de elementos
+- ✅ **Escape key** → Cierre de modales
+- ✅ **Focus visible** → Indicadores claros
+
+#### 🎨 Contraste y Diseño
+
+| Elemento | Contraste | Estado |
 |---|---|---|
-| `<header>` | Navegación principal | ✅ Estructura clara del sitio |
-| `<main>` | Contenido principal | ✅ Área principal de cada página |
-| `<section>` | Secciones temáticas | ✅ Agrupación lógica de contenido |
-| `<article>` | Contenido independiente | ✅ Tarjetas de proyecto |
-| `<nav>` | Navegación | ✅ Menús y enlaces |
-| `<footer>` | Información adicional | ✅ Pie de página |
+| Texto principal | 12.63:1 | ✅ AAA |
+| Enlaces | 8.59:1 | ✅ AAA |
+| Errores | 5.14:1 | ✅ AAA |
 
-#### ARIA Labels y Roles
+#### 📱 Responsive Accesible
 
-```html
-<!-- Navegación -->
-<nav aria-label="Navegación principal">
-  <ul aria-label="Menu">
-    <li><a href="#" aria-current="page">Home</a></li>
-  </ul>
-</nav>
+- ✅ **200% Zoom** → Contenido legible sin scroll horizontal
+- ✅ **Unidades relativas** → `rem`, `em`, `clamp()`
+- ✅ **Tipografía fluida** → Adaptable a todos los dispositivos
 
-<!-- Botón hamburguesa -->
-<input aria-label="burger menu" type="checkbox" id="nav-toggle" />
-<div aria-label="burger menu toggle">
-  <span aria-label="burger menu deco"></span>
-</div>
+#### 🧪 Testing
 
-<!-- Formularios -->
-<label for="email">Email Address</label>
-<input id="email" type="email" aria-describedby="email-error" />
-<div id="email-error" role="alert" aria-live="polite"></div>
-`````
+| Herramienta | Resultado |
+|---|---|
+| 🔍 **axe-core** | ✅ 0 errores críticos |
+| 🕯️ **Lighthouse** | ✅ 95%+ en todas las páginas |
+| ⌨️ **Navegación manual** | ✅ Funcional completa |
 
-### ⌨️ Navegación por Teclado
 
-#### Soporte Completo de Teclado
 
-- ✅ **Tab Navigation** → Navegación secuencial por todos los elementos interactivos
-- ✅ **Enter/Space** → Activación de botones y enlaces
-- ✅ **Escape** → Cierre de modales y menús
-- ✅ **Focus Visible** → Indicadores visuales claros de foco
 
-#### Implementación en Componentes
-
-<details>
-<summary>📋 Ver código de navegación por teclado</summary>
-
-```javascript
-// Modal - Cierre con Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && this.isOpen) {
-    this.hideModal();
-  }
-});
-
-// Menú hamburguesa - Toggle con Enter/Space
-menuToggle.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    menuToggle.checked = !menuToggle.checked;
-  }
-});
-
-// Trap focus en modal
-function trapFocus(element) {
-  const focusableElements = element.querySelectorAll(
-    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  );
-  const firstElement = focusableElements[0];
-  const lastElement = focusableElements[focusableElements.length - 1];
-  
-  element.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-      if (e.shiftKey && document.activeElement === firstElement) {
-        e.preventDefault();
-        lastElement.focus();
-      } else if (!e.shiftKey && document.activeElement === lastElement) {
-        e.preventDefault();
-        firstElement.focus();
-      }
-    }
-  });
-}
-```
-
-</details>
-
-### 🎨 Contraste y Diseño Visual
-
-#### Paleta de Colores Accesible
-
-| Uso | Color | Contraste | Estado |
-|---|---|---|---|
-| 🖤 **Texto principal** | `#292E47` sobre `#FFFFFF` | 12.63:1 | ✅ AAA |
-| 🔵 **Enlaces** | `#072AC8` sobre `#FFFFFF` | 8.59:1 | ✅ AAA |
-| 🟢 **Campo válido** | `#28A745` sobre `#FFFFFF` | 3.84:1 | ✅ AA |
-| 🔴 **Error** | `#DC3545` sobre `#FFFFFF` | 5.14:1 | ✅ AAA |
-
-#### Variables CSS Accesibles
-
-```css
-:root {
-  /* Colores con contraste AAA */
-  --Primary-default: #072AC8;
-  --Neutral-dark: #292E47;
-  --Neutral-medium: #6B708D;
-  --Right: #28A745;
-  --Wrong: #DC3545;
-  
-  /* Tamaños de fuente escalables */
-  --font-size-small: clamp(0.875rem, 2vw, 1rem);
-  --font-size-body: clamp(1rem, 2.5vw, 1.125rem);
-  --font-size-h3: clamp(1.5rem, 4vw, 2rem);
-  
-  /* Espaciado consistente */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-}
-```
-
-### 📱 Responsive y Zoom
-
-#### Soporte de Zoom
-
-- ✅ **200% Zoom** → Contenido legible hasta 200% sin scroll horizontal
-- ✅ **Viewport Meta** → Configuración correcta para dispositivos móviles
-- ✅ **Unidades Relativas** → `rem`, `em`, `%` en lugar de `px` fijos
-- ✅ **Clamp()** → Tipografía fluida que se adapta al tamaño de pantalla
-
-```css
-/* Tipografía fluida */
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-p { font-size: clamp(1rem, 2.5vw, 1.125rem); }
-
-/* Espaciado responsive */
-.container {
-  padding: clamp(1rem, 5vw, 2rem);
-  max-width: min(90%, 1200px);
-  margin: 0 auto;
-}
-```
-
-### 🔊 Tecnologías de Asistencia
-
-#### Screen Readers
-
-- ✅ **Texto alternativo** → Todas las imágenes tienen `alt` descriptivo
-- ✅ **Etiquetas de formulario** → Todos los campos están etiquetados
-- ✅ **Roles ARIA** → Elementos complejos tienen roles apropiados
-- ✅ **Live Regions** → Mensajes de error se anuncian automáticamente
-
-#### Implementación en Formularios
-
-```html
-<!-- Formulario accesible -->
-<form novalidate>
-  <fieldset>
-    <legend>Información de Contacto</legend>
-    
-    <div class="form-group">
-      <label for="fullname">Nombre Completo *</label>
-      <input 
-        id="fullname" 
-        type="text" 
-        required 
-        aria-describedby="fullname-error"
-        aria-invalid="false"
-      />
-      <div id="fullname-error" role="alert" aria-live="polite"></div>
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Correo Electrónico *</label>
-      <input 
-        id="email" 
-        type="email" 
-        required 
-        aria-describedby="email-error email-help"
-        aria-invalid="false"
-      />
-      <div id="email-help">Formato: usuario@dominio.com</div>
-      <div id="email-error" role="alert" aria-live="polite"></div>
-    </div>
-  </fieldset>
-</form>
-```
-
-### ⚡ Performance y Carga
-
-#### Optimización para Conexiones Lentas
-
-- ✅ **Lazy Loading** → Imágenes se cargan bajo demanda
-- ✅ **Formatos Modernos** → WebP con fallback a JPG
-- ✅ **Compresión** → CSS y JS minificados
-- ✅ **Caché Inteligente** → LocalStorage para datos de API
-
-```html
-<!-- Imágenes optimizadas -->
-<img 
-  src="project-thumb.webp" 
-  alt="Descripción detallada del proyecto"
-  loading="lazy"
-  width="300" 
-  height="200"
-/>
-
-<!-- Fallback para formatos no soportados -->
-<picture>
-  <source srcset="image.webp" type="image/webp">
-  <source srcset="image.avif" type="image/avif">
-  <img src="image.jpg" alt="Descripción de la imagen">
-</picture>
-```
-
-### 🧪 Testing de Accesibilidad
-
-#### Herramientas Utilizadas
-
-| Herramienta | Propósito | Resultado |
-|---|---|---|
-| 🔍 **axe-core** | Análisis automático | ✅ 0 errores críticos |
-| 📱 **WAVE** | Evaluación visual | ✅ Contraste correcto |
-| ⌨️ **Keyboard Navigation** | Prueba manual | ✅ Navegación completa |
-| 🔊 **NVDA/VoiceOver** | Screen readers | ✅ Lectura fluida |
-
-#### Checklist de Verificación
-
-- [ ] ✅ Todas las imágenes tienen texto alternativo
-- [ ] ✅ Formularios están correctamente etiquetados
-- [ ] ✅ Navegación por teclado funciona completamente
-- [ ] ✅ Contraste cumple estándares AA/AAA
-- [ ] ✅ Contenido es legible al 200% de zoom
-- [ ] ✅ Errores se comunican claramente
-- [ ] ✅ Estructura HTML es semántica
-- [ ] ✅ ARIA labels están implementados
-
+---
 
 ## 🚀 Mejoras Futuras
 
@@ -810,8 +608,8 @@ p { font-size: clamp(1rem, 2.5vw, 1.125rem); }
 ### 📝 Estructura de Commits
 
 ```bash
-feat: add new component
-fix: resolve modal animation issue
+feat: add new component or feature
+hotfix: resolve an issue
 style: improve responsive design
 docs: update README
 refactor: optimize data fetching
@@ -825,6 +623,29 @@ refactor: optimize data fetching
 4. ✅ Verificar componentes en diferentes páginas
 
 ---
+## 🚀 Deployment
+
+### 🌐 Vercel
+
+El proyecto está desplegado en **Vercel** con deployment automático desde GitHub.
+
+**🔗 URL:** [http://circle-proyect.vercel.app](http://circle-proyect.vercel.app)
+
+#### Características del Deploy
+
+- ✅ **Auto-deploy** → Push a `main` despliega automáticamente
+- ✅ **HTTPS** → SSL certificado automático
+- ✅ **CDN Global** → Distribución mundial
+- ✅ **Preview** → Cada branch genera preview único
+
+#### Proceso
+
+1. Push al repositorio GitHub
+2. Vercel detecta cambios automáticamente  
+3. Build y deploy en segundos
+4. Site actualizado en vivo
+
+---
 
 ## 📄 Licencia
 
@@ -836,7 +657,7 @@ refactor: optimize data fetching
 
 **Desarrollado con ❤️ usando tecnologías web modernas**
 
-[![IronHack](https://img.shields.io/badge/IronHack-Bootcamp-red?style=for-the-badge)](https://www.ironhack.com/)
-[![MIT License](https://img.shields.io/badge/License-Educational-blue?style=for-the-badge)](LICENSE)
+[![IronHack](https://img.shields.io/badge/IronHack-Bootcamp-blue?style=for-the-badge)](https://www.ironhack.com/)
+[![MIT License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)](LICENSE)
 
 </div>
